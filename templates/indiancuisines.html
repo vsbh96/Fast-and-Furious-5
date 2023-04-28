@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+</head>
+<title>Indian Cuisine Items</title>
+<style>
+  @media screen and (min-width: 912px) {
+      
+    .card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+  transform: scale(1.2);
+}
+
+.imgtext {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .imgtext {
+  opacity: 1;
+}
+
+}
+</style>
+<script>
+const card = document.querySelector('.card');
+const img = card.querySelector('img');
+
+card.addEventListener('mousemove', function(event) {
+  const x = event.clientX - card.offsetLeft;
+  const y = event.clientY - card.offsetTop;
+  
+  img.style.transform = `translate(-${x / 10}px, -${y / 10}px)`;
+});
+
+card.addEventListener('mouseleave', function() {
+  img.style.transform = 'translate(0, 0)';
+});
+</script>
+
+<script>
+    /*LOADING LOGO */
+window.addEventListener("load", function () {
+
+const loader = document.querySelector(".loader");
+
+setTimeout(() => {
+
+loader.classList.add("hide");
+
+document.querySelector(".content").style.display = "block";
+
+},850);
+
+});
+</script>
+
+<script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+        
+</script>
+
+<body>
+  <div class="page-header" >
+    <div class="title">
+        <p> <b>Authentic Food Receipe Website </b></p>
+    </div>
+    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+        <i class="fa fa-bars"></i>
+    </a>
+    <div class="socialtop">
+    <div id="navigation-bar" class="nav-bar">
+        <a href="{{ url_for('home') }}"><b> Home </b></a>
+        <div class="dropdown">
+            <a class="active" href="{{ url_for('cuisines') }}" class="dropbtn"><b> Cuisines </b> <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+              <a class="active" href="{{ url_for('indiancuisines') }}">Indian</a>
+              <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+              <a href="{{ url_for('italiancuisines') }}">Italian</a>
+              <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+              <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+              <a href="{{ url_for('thaicuisines') }}">Thai</a>
+              <a href="{{ url_for('greekcuisines') }}">Greek</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+            </div>
+          </div>
+        <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+        <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+        <a href="{{ url_for('search') }}"><b> Search </b></a>
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+    </div>         
+    </div>
+</div>
+
+    <div class="loader">
+        <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+     </div>
+
+    <h2> Indian Cuisines</h2>
+  <div class="container">        
+    <div class="col1">
+        <div class="card">
+          <a href="{{ url_for('ChickenTikkaMasalaIndian') }}">
+            <img src="{{ url_for('static', filename='Images/special-chicken-tikka-masala-wide.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+            </a>
+            <div class="imgtext">
+                <h3><b>Chicken Tikka Masala</b></h3><br>
+                <p>Chicken tikka masala is a popular dish that originated in the Indian subcontinent.It consists of marinated pieces of chicken that are grilled or baked and then cooked in a spiced tomato-based sauce. </p>
+            </div>
+         </div>    
+    </div>
+    <div class="col1">
+        <div class="card">
+            <a href="#">
+            <img src="{{ url_for('static', filename='Images/tikka.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+                <h3><b>Paneer Butter Masala</b></h3><br>
+                <p>Paneer butter masala is a popular North Indian dish that is made with paneer (Indian cottage cheese) cooked in a creamy tomato-based gravy.The dish is usually served with rice, naan bread, or other Indian flatbreads.</p>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</body>
+<style>
+  footer{
+  position: fixed;
+  bottom: 0;  
+  }
+</style>
+
+<footer>
+  <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+  <p>Contact: info@foodadventureworldwidewebsite.com</p>
+</footer>
+</html>

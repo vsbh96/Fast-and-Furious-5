@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+        <title>Various Cuisines across the world</title>
+    
+    </head>
+    <script>
+      /*LOADING LOGO */
+    window.addEventListener("load", function () {
+    
+    const loader = document.querySelector(".loader");
+    
+    setTimeout(() => {
+    
+    loader.classList.add("hide");
+    
+    document.querySelector(".content").style.display = "block";
+    
+    },850);
+    });
+    </script>
+    
+
+    <body>   
+      <div class="loader">
+        <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+     </div>
+     <div class="page-header" >
+      <div class="title">
+          <p> <b>Authentic Food Receipe Website </b></p>
+      </div>
+      <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+          <i class="fa fa-bars"></i>
+      </a>
+      <div class="socialtop">
+      <div id="navigation-bar" class="nav-bar">
+        {% if 'username' in session %}
+        <h3><b>Welcome, {{ username }}</b></h3>
+        {% endif %}
+          <div class="dropdown">
+              <a href="{{ url_for('cuisines_loggedin') }}" class="dropbtn"><b> Home </b> <i class="fa fa-caret-down"></i></a>
+              <div class="dropdown-content">
+                <a href="{{ url_for('indiancuisines') }}">Indian</a>
+                <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+                <a href="{{ url_for('italiancuisines') }}">Italian</a>
+                <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+                <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+                <a href="{{ url_for('thaicuisines') }}">Thai</a>
+                <a href="{{ url_for('greekcuisines') }}">Greek</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a class="active" href="{{ url_for('desserts_loggedin') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+              <div class="dropdown-content">
+                  <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                  <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                  <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                  <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+              </div>
+            </div>
+          <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+          <a href="{{ url_for('contactus_loggedin') }}"><b> Contact Us </b></a>
+          <a href="{{ url_for('search_loggedin') }}"><b> Search </b></a>
+          <a href="{{ url_for('index') }}"><b> Upload Recipe </b></a>
+          {% if 'username' in session %}
+          <a href="{{ url_for('logout') }}"><b>Logout</b></a>
+          {% endif %}
+          <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+      </div>         
+      </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+
+      <div class="container">
+            <div class="col1">
+             <div class="card">
+                <a href="{{ url_for('indiandesserts') }}">
+                <img src="{{ url_for('static', filename='Images/gulab-jamun.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+                </a>
+                <div class="imgtext">
+                    <h3><b>Indian Dessert</b></h3><br>
+                    <p>Indian desserts are distinct from Western desserts and for most Indians, they hold an essential place in their cuisine and are consumed regularly. Indian desserts also feature prominently during religious festivities and celebrations.</p>
+                </div>
+             </div>
+        </div>
+        <div class="col1">
+            <div class="card">
+                <a href="{{ url_for('italiandesserts') }}">
+                <img src="{{ url_for('static', filename='Images/desserts-italian.jpeg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+            </a>
+                <div class="imgtext">
+                    <h3><b>Italian Dessert</b></h3><br>
+                    <p>Italian desserts are made with simple but flavorful ingredients such as fresh fruits, chocolate, cream, and nuts. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col1">
+            <div class="card">
+                <a href="{{ url_for('thaidesserts') }}">
+                <img src="{{ url_for('static', filename='Images/khao-niaow-ma-muang-mango.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+            </a>
+                <div class="imgtext">
+                <h3><b>Thai Dessert</b></h3><br>
+                <p>Thai desserts are known for their unique combination of sweet, salty, and sometimes spicy flavors, as well as their colorful and intricate designs.</p>
+            </div>
+            </div>
+        </div>
+        <div class="col1">
+            <div class="card">
+                <a href="{{ url_for('mexicandesserts') }}">
+                <img src="{{ url_for('static', filename='Images/Sopapillas-recipe.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+            </a>
+                <div class="imgtext">
+                <h3><b>Mexican Dessert</b></h3><br>
+                <p>Mexican desserts are known for their rich flavors and use of traditional ingredients such as cinnamon, vanilla, and chocolate. </p>
+            </div>
+            </div>
+        </div>
+
+        <style>
+            .chart{
+                margin-left: 5rem;
+                width: 75rem;
+                height: 40rem;
+                background-color: antiquewhite;
+            }
+        
+          </style>
+          
+        <div class="chart">
+            <h2>Chart of Desserts of various Cuisines vs Average Time of preparation </h2>
+        <canvas id="myChart"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+          // Your JavaScript code here
+          const data = {
+              labels: ['Indian', 'Italian', 'Thai', 'Mexican'],
+              datasets: [ {
+              label: 'Gulab Jamun',
+              backgroundColor: 'rgba(244,103,110,0.2)',
+              borderColor: 'rgba(244,103,110,1)',
+              borderWidth: 1,
+              data: [30,0,0,0],
+            },
+            {
+              label: 'Gajar Halwa',
+              backgroundColor: 'rgba(255, 206, 86, 0.2)',
+              borderColor: 'rgba(255, 206, 86, 1)',
+              borderWidth: 1,
+              data: [50,0,0,0]
+            },
+            {
+              label: 'Chocolate-and-Pistachio Biscotti',
+              backgroundColor: 'rgba(244,103,110,0.2)',
+              borderColor: 'rgba(244,103,110,1)',
+              borderWidth: 1,
+              data: [0, 60, 0, 0]
+            },
+            {
+              label: 'Italian-Style Candied Chestnuts',
+              backgroundColor: 'rgba(255, 206, 86, 0.2)',
+              borderColor: 'rgba(255, 206, 86, 1)',
+              borderWidth: 1,
+              data: [0, 50, 0, 0]
+            },
+            {
+              label: 'Khao-Niaow-Ma-Muang-Mango',
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1,
+              data: [0, 0, 55, 0]
+            },
+            {
+              label: 'Red Ruby Dessert',
+              backgroundColor: 'rgba(255, 206, 86, 0.2)',
+              borderColor: 'rgba(255, 206, 86, 1)',
+              borderWidth: 1,
+              data: [0, 0, 45, 0]
+            },
+            {
+              label: 'Sopapillas',
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1,
+              data: [0, 0, 0, 40]
+            },
+            {
+              label: 'Creamy Caramel Flan',
+              backgroundColor: 'rgba(255, 206, 86, 0.2)',
+              borderColor: 'rgba(255, 206, 86, 1)',
+              borderWidth: 1,
+              data: [0, 0, 0, 50]
+            }
+        
+            ]
+            };
+        
+            const config = {
+              type: 'bar',
+              data: data,
+              options: {
+                responsive: true,
+                scales: {
+                  x: {
+                    stacked: true,
+                    title: {
+                  display: true,
+                  text: 'Various International Cuisines',
+                  font: {
+                    weight: 'bold'
+                  }
+                }
+                  },
+                  y: {
+                    stacked: true,
+                    title: {
+                  display: true,
+                  text: 'Average Preparation Time for each item',
+                  font: {
+                    weight: 'bold'
+                  }
+                }
+                  }
+                }
+              },
+            };
+        
+            var myChart = new Chart(
+              document.getElementById('myChart'),
+              config
+            );
+        
+        });
+        </script>
+        
+
+
+
+
+
+    </body>
+    <footer>
+      <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+      <p>Contact: info@foodadventureworldwidewebsite.com</p>
+    </footer>
+
+</html>

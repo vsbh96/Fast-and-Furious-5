@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/cuisine.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/slick/slick.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/slick/slick-theme.css') }}">
+  </head>
+    <header>
+      <div class="page-header" >
+        <div class="title">
+            <p> <b>Authentic Food Receipe Website </b></p>
+        </div>
+        <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="socialtop">
+        <div id="navigation-bar" class="nav-bar">
+            <a href="{{ url_for('home') }}"><b> Home </b></a>
+            <div class="dropdown">
+                <a class="active" href="{{ url_for('cuisines') }}" class="dropbtn"><b> Cuisines </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                  <a href="{{ url_for('indiancuisines') }}">Indian</a>
+                  <a class="active" href="{{ url_for('mexicancuisines') }}">Mexican</a>
+                  <a href="{{ url_for('italiancuisines') }}">Italian</a>
+                  <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+                  <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+                  <a href="{{ url_for('thaicuisines') }}">Thai</a>
+                  <a href="{{ url_for('greekcuisines') }}">Greek</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                    <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                    <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                    <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+                </div>
+              </div>
+            <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+            <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+            <a href="{{ url_for('search') }}"><b> Search </b></a>
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+        </div>         
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+    </header>
+    <title>Mexican Cuisine Enchiladas Verdes</title>
+    <style>
+      .slick-dots {
+        margin-top: 2rem;
+        margin-left: -3rem;
+        }
+        .slick-dots li button:before {
+         color: #ff0000; /* Replace with your desired color */
+            }
+
+        /* Change the active dot color */
+        .slick-dots li.slick-active button:before {
+        color: #ffff; /* Replace with your desired color */
+        }
+
+        @media screen and (max-width: 850px) {
+          .slick-dots {
+        margin-top: 2rem;
+        margin-left: 0rem;
+        }
+        }
+    </style>
+    <script>
+      /*LOADING LOGO */
+  window.addEventListener("load", function () {
+  
+  const loader = document.querySelector(".loader");
+  
+  setTimeout(() => {
+  
+  loader.classList.add("hide");
+  
+  document.querySelector(".content").style.display = "block";
+  
+  },850);
+  
+  });
+  </script>
+        <body>
+          <div class="loader">
+            <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+         </div>
+          <br><h2>Mexican Cuisine</h2><br>
+          <h3>Enchiladas Verdes Authentic Recipe is here</h3>      
+          <section class="vertical-center slider">
+            <div>
+              <img src="{{ url_for('static', filename='Images/Mexican-Enchiladas.jpg') }}" height="350px" width="600px">
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Images/Mexican-Enchid.jpg') }}" height="350px" width="600px">
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Images/Mexican-Enchid2.jpg') }}" height="350px" width="600px">
+            </div>
+            </section>          
+          <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+          <script src="{{ url_for('static', filename='slick/slick.js') }}"></script>
+          <script src="{{ url_for('static', filename='Javascript/cuisine.js') }}"></script>
+            <div class="container1">
+            <div class="cont">
+              <h3>Ingredients required:</h3><br>
+              <ul>
+                <li>12 corn tortillas</li>
+                <li>1 pound (450g) boneless, skinless chicken breasts</li>
+                <li>2 cups (480ml) chicken broth</li>
+                <li>1 pound (450g) tomatillos, husked and rinsed</li>
+                <li>1 small white onion, chopped</li>
+                <li>2 garlic cloves, minced</li>
+                <li>2 jalapeño peppers, seeded and chopped</li>
+                <li>1/2 cup (15g) chopped fresh cilantro</li>
+                <li>1 tablespoon (15ml) vegetable oil</li>
+                <li>1/2 cup (50g) crumbled queso fresco</li>
+                <li>1/2 cup (120ml) sour cream</li>
+                <li>Salt and freshly ground black pepper</li>
+             </ul>
+              <h3>Instructions:</h3><br>
+            <ol>
+                <li>Preheat the oven to 350°F (175°C).</li>
+                <li>Place the chicken breasts in a large pot and cover with the chicken broth. Bring to a boil over high heat, then reduce the heat to low and simmer until the chicken is cooked through, about 20-25 minutes.</li>
+                <li>Remove the chicken from the pot and let it cool. Shred the chicken into bite-sized pieces with two forks.</li>
+                <li>While the chicken is cooking, make the tomatillo sauce. Combine the tomatillos, onion, garlic, and jalapeño peppers in a blender or food processor and puree until smooth. Add the cilantro and pulse a few times to combine.</li>
+                <li>Heat the vegetable oil in a large skillet over medium heat. Add the tomatillo sauce and simmer for 10-15 minutes, stirring occasionally, until the sauce thickens.</li>
+                <li>Dip each tortilla in the tomatillo sauce to coat both sides, then place some shredded chicken in the center and roll it up. Place the enchiladas seam side down in a 9x13-inch baking dish.</li>
+                <li>Pour the remaining tomatillo sauce over the enchiladas and sprinkle the queso fresco on top.</li>
+                <li>Bake the enchiladas for 20-25 minutes, until the cheese is melted and bubbly.</li>
+                <li>Serve the enchiladas hot, topped with a dollop of sour cream.</li>
+              </ol>         
+                <p><b>Enjoy your delicious and authentic Mexican cuisine food item!</b></p>
+            </div>
+          </div>
+          <footer>
+            <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+            <p>Contact: info@foodadventureworldwidewebsite.com</p>
+          </footer>
+    </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/cuisine.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/slick/slick.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/slick/slick-theme.css') }}">
+      <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+  </head>
+  <script>
+    /*LOADING LOGO */
+window.addEventListener("load", function () {
+
+const loader = document.querySelector(".loader");
+
+setTimeout(() => {
+
+loader.classList.add("hide");
+
+document.querySelector(".content").style.display = "block";
+
+},850);
+
+});
+</script>
+    <header>
+      <div class="page-header" >
+        <div class="title">
+            <p> <b>Authentic Food Receipe Website </b></p>
+        </div>
+        <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="socialtop">
+        <div id="navigation-bar" class="nav-bar">
+            <a href="{{ url_for('home') }}"><b> Home </b></a>
+            <div class="dropdown">
+                <a class="active" href="{{ url_for('cuisines') }}" class="dropbtn"><b> Cuisines </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                  <a href="{{ url_for('indiancuisines') }}">Indian</a>
+                  <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+                  <a class="active" href="{{ url_for('italiancuisines') }}">Italian</a>
+                  <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+                  <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+                  <a href="{{ url_for('thaicuisines') }}">Thai</a>
+                  <a href="{{ url_for('greekcuisines') }}">Greek</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                    <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                    <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                    <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+                </div>
+              </div>
+            <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+            <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+            <a href="{{ url_for('search') }}"><b> Search </b></a>
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+        </div>         
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+    </header>
+    <title>Italian Cuisine Spaghetti Carbonara</title>
+    <style>
+      .slick-dots {
+        margin-top: 2rem;
+        margin-left: -3rem;
+        }
+        .slick-dots li button:before {
+         color: #ff0000; /* Replace with your desired color */
+            }
+
+        /* Change the active dot color */
+        .slick-dots li.slick-active button:before {
+        color: #ffff; /* Replace with your desired color */
+        }
+
+        @media screen and (max-width: 850px) {
+          .slick-dots {
+        margin-top: 2rem;
+        margin-left: 0rem;
+        }
+        }
+    </style>
+        <body>
+          <div class="loader">
+            <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+         </div>
+          <br><h2>Italian Cuisine</h2><br>
+          <h3>Spaghetti Carbonara Authentic Recipe is here</h3>      
+          <section class="vertical-center slider">
+            <div>
+              <img src="{{ url_for('static', filename='Images/special-chicken-tikka-masala-wide.jpg') }}" height="350px" width="600px">
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Images/Italian-spaghetti.jpg') }}" height="350px" width="600px">
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Images/Italian-spaghetti2.jpg') }}" height="350px" width="600px">
+            </div>
+            </section>          
+          <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+          <script src="{{ url_for('static', filename='slick/slick.js') }}"></script>
+          <script src="{{ url_for('static', filename='Javascript/cuisine.js') }}"></script>
+            <div class="container1">
+            <div class="cont">
+              <h3>Ingredients required:</h3><br>
+              <ul>
+                <li>1 pound (450g) spaghetti</li>
+                <li>6 ounces (170g) guanciale (cured pork jowl), pancetta (Italian bacon), or bacon, cut into small pieces</li>
+                <li>4 large egg yolks</li>
+                <li>1 cup (100g) freshly grated Pecorino Romano cheese, plus more for serving</li>
+                <li>1/4 teaspoon freshly ground black pepper</li>
+                <li>Salt, to taste</li>
+            </ul>
+              <h3>Instructions:</h3><br>
+            <ol>
+                <li>Bring a large pot of salted water to a boil. Add spaghetti and cook until al dente, according to package directions.</li>
+                <li>While the spaghetti is cooking, heat a large skillet over medium heat. Add the guanciale or pancetta or bacon and cook until crispy and golden, about 8-10 minutes.</li>
+                <li>In a bowl, whisk together the egg yolks, Pecorino Romano cheese, and a generous amount of freshly ground black pepper.</li>
+                <li>Once the spaghetti is cooked, reserve 1 cup of the pasta cooking water and drain the rest.</li>
+                <li>Add the drained spaghetti to the skillet with the guanciale or pancetta or bacon. Toss everything together to combine.</li>
+                <li>Remove the skillet from heat and quickly add the egg and cheese mixture to the spaghetti, tossing vigorously to combine. The heat from the pasta will cook the eggs and create a creamy sauce.</li>
+                <li>If the pasta seems too dry, add a little bit of the reserved pasta cooking water to the skillet, a few tablespoons at a time, until the desired consistency is reached.</li>
+                <li>Season with additional black pepper and salt, if needed.</li>
+                <li>Serve the spaghetti carbonara hot, topped with more Pecorino Romano cheese.</li>
+              </ol>         
+                <p><b>Enjoy your delicious and authentic Italian cuisine food item!</b></p>
+            </div>
+          </div>
+          <footer>
+            <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+            <p>Contact: info@foodadventureworldwidewebsite.com</p>
+          </footer>
+    </body>
+</html>

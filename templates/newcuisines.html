@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+    <title>Various Cuisines across the world</title>
+</head>
+<script>
+  /*LOADING LOGO */
+window.addEventListener("load", function () {
+
+const loader = document.querySelector(".loader");
+
+setTimeout(() => {
+
+loader.classList.add("hide");
+
+document.querySelector(".content").style.display = "block";
+
+},850);
+});
+</script>
+
+<body>  
+    <div class="loader">
+      <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+     </div>
+  
+     <div class="page-header" >
+      <div class="title">
+          <p> <b>Authentic Food Receipe Website </b></p>
+      </div>
+      <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+          <i class="fa fa-bars"></i>
+      </a>
+      <div class="socialtop">
+      <div id="navigation-bar" class="nav-bar">
+          <a href="{{ url_for('home') }}"><b> Home </b></a>
+          <div class="dropdown">
+              <a class="active" href="{{ url_for('cuisines') }}" class="dropbtn"><b> Cuisines </b> <i class="fa fa-caret-down"></i></a>
+              <div class="dropdown-content">
+                <a href="{{ url_for('indiancuisines') }}">Indian</a>
+                <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+                <a href="{{ url_for('italiancuisines') }}">Italian</a>
+                <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+                <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+                <a href="{{ url_for('thaicuisines') }}">Thai</a>
+                <a href="{{ url_for('greekcuisines') }}">Greek</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+              <div class="dropdown-content">
+                  <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                  <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                  <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                  <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+              </div>
+            </div>
+          <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+          <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+          <a href="{{ url_for('search') }}"><b> Search </b></a>
+          <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+      </div>         
+      </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+
+    <h2> Here are various International Cuisines</h2>
+  <div class="container">        
+    <div class="col1">
+        <div class="card">
+            <a href="{{ url_for('indiancuisines') }}">
+            <img src="{{ url_for('static', filename='Images/Indian Cuisine.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+            </a>
+            <div class="imgtext">
+                <h3><b>Indian Cuisine</b></h3><br>
+                <p>Indian cuisine is a diverse and flavorful style of cooking that is characterized by the use of a variety of spices and herbs, as well as a range of regional and cultural influences.</p>
+            </div>
+         </div>    
+    </div>
+    <div class="col1">
+        <div class="card">
+            <a href="{{ url_for('mexicancuisines') }}">
+            <img src="{{ url_for('static', filename='Images/Mexican Cuisine.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+                <h3><b>Mexican Cuisine</b></h3><br>
+                <p>Mexican cuisine is a vibrant and colorful style of cooking that is known for its bold flavors, use of chili peppers, and its incorporation of beans, and other staple ingredients.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col1">
+        <div class="card">
+            <a href="{{ url_for('thaicuisines') }}">
+            <img src="{{ url_for('static', filename='Images/Thai Cuisine.png') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+            <h3><b>Thai Cuisine</b></h3><br>
+            <p>Thai cuisine is a vibrant and complex style of cooking that blends the flavors of Southeast Asia with influences from China, India, and other neighboring countries.</p>
+        </div>
+        </div>
+      </div>
+    
+      <div class="col1">
+        <div class="card">
+            <a href="{{ url_for('italiancuisines') }}">
+            <img src="{{ url_for('static', filename='Images/Italian Cuisine.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+            <h3><b>Italian Cuisine</b></h3><br>
+            <p>Italian cuisine is a globally popular cuisine known for its emphasis on fresh, simple ingredients, bold flavors, and traditional dishes like pasta, pizza, and risotto.</p>
+        </div>
+        </div>
+      </div>
+  
+      <div class="col1">
+        <div class="card">
+            <a href="{{ url_for('chinesecuisines') }}">
+            <img src="{{ url_for('static', filename='Images/Chinese Cuisine.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+            <h3><b>Chinese Cuisine</b></h3><br>
+            <p>Chinese cuisine is a diverse and complex culinary tradition that varies widely by region and incorporates a wide range of flavors, ingredients, and cooking techniques. </p>
+        </div>
+        </div>
+      </div>
+
+      <div class="col1">
+        <div class="card">
+            <a href="{{ url_for('japanesecuisines') }}">
+            <img src="{{ url_for('static', filename='Images/Japanese Cuisine.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+            <h3><b>Japanese Cuisine</b></h3><br>
+            <p>Japanese cuisine is a diverse culinary tradition that emphasizes fresh, seasonal ingredients, precise preparation techniques, and a delicate balance of flavors.</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="col1">
+        <div class="card">
+            <a href="{{ url_for('greekcuisines') }}">
+            <img src="{{ url_for('static', filename='Images/Greek Cuisine.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+            <h3><b>Greek Cuisine</b></h3><br>
+            <p>Greek cuisine is a flavorful and healthy culinary tradition that features fresh ingredients such as olive oil, feta, and seafood, with classic dishes including souvlaki, dolmades, and spanakopita.</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="col1">
+        <div class="card">
+            <a href="#">
+            <img src="{{ url_for('static', filename='Images/French Cuisine.jpg') }}" alt="Your Image" style="border: 1px solid #ccc;" width="300px" height="200px">
+        </a>
+            <div class="imgtext">
+            <h3><b>French Cuisine</b></h3><br>
+            <p>French cuisine is a sophisticated and diverse culinary tradition that emphasizes high-quality ingredients, intricate cooking techniques, and rich flavors</p>
+        </div>
+        </div>
+      </div>
+
+  </div>
+  <style>
+    .chart{
+        margin-left: 5rem;
+        width: 75rem;
+        height: 40rem;
+        background-color: antiquewhite;
+    }
+
+  </style>
+  
+<div class="chart">
+  <h2>Chart of Food Items of various Cuisines vs Average Time of preparation </h2>
+  <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script>
+  /*Chart of preparation time vs food items displayed using chart.js*/
+    document.addEventListener('DOMContentLoaded', function() {
+  
+  const data = {
+      labels: ['Italian', 'Thai', 'Japanese', 'Indian', 'Chinese', 'Mexican','Greek'],
+      datasets: [ {
+      label: 'Chicken Tikka Masala',
+      backgroundColor: 'rgba(244,103,110,0.2)',
+      borderColor: 'rgba(244,103,110,1)',
+      borderWidth: 1,
+      data: [0,0,0,30,0,0,0],
+    },
+    {
+      label: 'Paneer Butter Masala',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0,0,0,25,0,0,0]
+    },
+    {
+      label: 'Mexican-Enchiladas',
+      backgroundColor: 'rgba(244,103,110,0.2)',
+      borderColor: 'rgba(244,103,110,1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 0, 30, 0]
+    },
+    {
+      label: 'Burritos',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 0, 20, 0]
+    },
+    {
+      label: 'Pad Thai Authentic',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 15, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Pad See Ew',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 20, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Spaghetti Carbonara',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [20, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Lasagne',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [25, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Kung-Pao-Chicken',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 20, 0, 0]
+    },
+    {
+      label: 'Chuan',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 40, 0, 0]
+    },
+    {
+      label: 'Japanese Teriyaki Salmon',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 0, 10, 0, 0, 0, 0]
+    },
+    {
+      label: 'Tempura',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 0, 20, 0, 0, 0, 0]
+    },
+    {
+      label: 'Moussaka',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 0, 0, 20]
+    }
+
+    ]
+    };
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true,
+            title: {
+          display: true,
+          text: 'Various International Cuisines',
+          font: {
+            weight: 'bold'
+          }
+        }
+          },
+          y: {
+            stacked: true,
+            title: {
+          display: true,
+          text: 'Average Preparation Time for each item',
+          font: {
+            weight: 'bold'
+          }
+        }
+          }
+        }
+      },
+    };
+
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+});
+</script>
+
+
+    
+  <footer>
+    <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+    <p>Contact: info@foodadventureworldwidewebsite.com</p>
+  </footer>
+</body>
+</html>

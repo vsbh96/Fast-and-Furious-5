@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/st.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+    <title>Various Cuisines across the world</title>
+</head>
+<script>
+  /*LOADING LOGO */
+window.addEventListener("load", function () {
+
+const loader = document.querySelector(".loader");
+
+setTimeout(() => {
+
+loader.classList.add("hide");
+
+document.querySelector(".content").style.display = "block";
+
+},850);
+});
+</script>
+<header>
+  <div class="loader">
+    <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+   </div>
+
+   <div class="page-header" >
+    <div class="title">
+        <p> <b>Authentic Food Receipe Website </b></p>
+    </div>
+    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+        <i class="fa fa-bars"></i>
+    </a>
+    <div class="socialtop">
+    <div id="navigation-bar" class="nav-bar">
+      {% if 'username' in session %}
+      <h3><b>Welcome, {{ username }}</b></h3>
+      {% endif %}
+        <div class="dropdown">
+            <a href="{{ url_for('cuisines_loggedin') }}" class="dropbtn"><b> Home </b> <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+              <a href="{{ url_for('indiancuisines') }}">Indian</a>
+              <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+              <a href="{{ url_for('italiancuisines') }}">Italian</a>
+              <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+              <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+              <a href="{{ url_for('thaicuisines') }}">Thai</a>
+              <a href="{{ url_for('greekcuisines') }}">Greek</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="{{ url_for('desserts_loggedin') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+            </div>
+          </div>
+        <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+        <a href="{{ url_for('contactus_loggedin') }}"><b> Contact Us </b></a>
+        <a href="{{ url_for('search_loggedin') }}"><b> Search </b></a>
+        <a class="active" href="{{ url_for('index') }}"><b> Upload Recipe </b></a>
+        {% if 'username' in session %}
+        <a href="{{ url_for('logout') }}"><b>Logout</b></a>
+        {% endif %}
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+    </div>         
+    </div>
+</div>
+</header>
+<style>
+  h4 {
+    color: white;
+  text-align: center;
+  background-color: #4CAF50;   
+  border-radius: 10px;
+  border: 3px outset white;
+  font-size: 18px;
+  width: 12rem;
+  }
+</style>
+<script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+
+<body>  
+  
+  <h2> Add, Delete and Update your recipes here</h2><br>
+  <div class="container3">    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <hr><a href="{{ url_for('add_recipe') }}"><div class="text"><h4>Add Recipe</h4></a>
+    <hr>
+    <div class="row1">
+        {% for recipe in recipes %}
+        <div class="col-4">
+            <div class="recipe-card1">
+                <h3>Title of the recipe: {{ recipe['id'] }} - {{ recipe['title'] }}</h3>
+                <p><strong>Cuisine Type:</strong> {{ recipe['cuisine'] }}</p><br>
+                <p><strong>Ingredients:</strong> {{ recipe['ingredients'] }}</p><br>
+                <p><strong>Instructions:</strong> {{ recipe['instructions'] }}</p><br>
+                <p><strong>Cooking Time:</strong> {{ recipe['cookingtime'] }}</p>
+                <form action="{{ url_for('delete_recipe', recipe_id=recipe['id']) }}" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <form action="{{ url_for('edit_recipe', recipe_id=recipe['id']) }}" method="GET">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <p>Total Recipes: {{ total_recipes }}</p>
+  </div>    
+
+</body>
+<style>
+  footer{
+  position: relative;
+  bottom: 0;  
+  }
+</style>
+<footer>
+  <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+  <p>Contact: info@foodadventureworldwidewebsite.com</p>
+</footer>
+</html>

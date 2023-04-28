@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/cuisine.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/slick/slick.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/slick/slick-theme.css') }}">
+      <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+  </head>
+<script>
+    /*LOADING LOGO */
+window.addEventListener("load", function () {
+
+const loader = document.querySelector(".loader");
+
+setTimeout(() => {
+
+loader.classList.add("hide");
+
+document.querySelector(".content").style.display = "block";
+
+},850);
+
+});
+</script>
+  
+    <header>
+      <div class="page-header" >
+        <div class="title">
+            <p> <b>Authentic Food Receipe Website </b></p>
+        </div>
+        <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="socialtop">
+        <div id="navigation-bar" class="nav-bar">
+            <a href="{{ url_for('home') }}"><b> Home </b></a>
+            <div class="dropdown">
+                <a href="{{ url_for('cuisines') }}" class="dropbtn"><b> Cuisines </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                  <a href="{{ url_for('indiancuisines') }}">Indian</a>
+                  <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+                  <a href="{{ url_for('italiancuisines') }}">Italian</a>
+                  <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+                  <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+                  <a href="{{ url_for('thaicuisines') }}">Thai</a>
+                  <a href="{{ url_for('greekcuisines') }}">Greek</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a class="active" href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                    <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                    <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                    <a class="active" href="{{ url_for('mexicandesserts') }}">Mexican</a>
+                </div>
+              </div>
+            <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+            <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+            <a href="{{ url_for('search') }}"><b> Search </b></a>
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+        </div>         
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+    </header>
+    <title>Mexican Cuisine Dessert Sopapillas</title>
+    <style>
+      .slick-dots {
+        margin-top: 2rem;
+        margin-left: -3rem;
+        }
+        .slick-dots li button:before {
+         color: #ff0000; /* Replace with your desired color */
+            }
+
+        /* Change the active dot color */
+        .slick-dots li.slick-active button:before {
+        color: #ffff; /* Replace with your desired color */
+        }
+
+        @media screen and (max-width: 850px) {
+          .slick-dots {
+        margin-top: 2rem;
+        margin-left: 0rem;
+        }
+        }
+    </style>
+        <body>
+          <div class="loader">
+            <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+         </div>
+          <br><h2>Mexican Cuisine</h2><br>
+          <h3>Sopapillas Authentic Recipe is here</h3>      
+          <section class="vertical-center slider">
+            <div>
+              <img src="{{ url_for('static', filename='Images/Sopapillas-recipe.jpg') }}" height="350px" width="600px">
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Images/mexican-sopa.jpg') }}" height="350px" width="600px">
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Images/mexican-sopa2.jpg') }}" height="350px" width="600px">
+            </div>
+            </section>          
+          <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+          <script src="{{ url_for('static', filename='slick/slick.js') }}"></script>
+          <script src="{{ url_for('static', filename='Javascript/cuisine.js') }}"></script>
+            <div class="container1">
+            <div class="cont">
+              <h3>Ingredients required:</h3><br>
+              <ul>
+                <li>2 cups all-purpose flour</li>
+                <li>2 teaspoons baking powderr</li>
+                <li>2 tablespoons vegetable shortening</li>
+                <li>3/4 cup warm water</li>
+                <li>Vegetable oil for frying</li>
+                <li>Powdered sugar and/or honey for serving</li>
+            </ul>
+              <h3>Instructions:</h3><br>
+            <ol>
+                <li>In a large mixing bowl, combine the flour, baking powder, and salt.Cut in the shortening using a pastry cutter or your fingers until the mixture is crumbly.</li>
+                  <li>Slowly add the warm water to the mixture, stirring until a soft and pliable dough forms</li>
+                  <li>Knead the dough for a few minutes on a floured surface until it is smooth.</li>
+                  <li>Cover the dough with a damp cloth and let it rest for 10-15 minutes.</li>
+                  <li>Heat about 2 inches of vegetable oil in a deep saucepan or frying pan over medium-high heat</li>
+                  <li>Divide the dough into 8-10 equal portions and roll each portion into a ball. Roll each ball out on a floured surface until it is about 1/8 inch thick.</li>
+                  <li>Cut each rolled-out dough into small squares or triangles.Fry the sopapillas in the hot oil until they are golden brown on both sides..</li>
+                  <li>Drain the sopapillas on a paper towel-lined plate to remove any excess oil.</li>
+                  <li>Serve hot with powdered sugar and/or honey for dipping.</li>
+              </ol>         
+                <p><b>Enjoy your delicious and authentic Mexican cuisine dessert!</b></p>
+            </div>
+          </div>
+          <footer>
+            <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+            <p>Contact: info@foodadventureworldwidewebsite.com</p>
+          </footer>
+    </body>
+</html>

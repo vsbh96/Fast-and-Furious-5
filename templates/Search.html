@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+        <title>Searching for receipes</title>
+    </head>
+    <script>
+      /*LOADING LOGO */
+    window.addEventListener("load", function () {
+    
+    const loader = document.querySelector(".loader");
+    
+    setTimeout(() => {
+    
+    loader.classList.add("hide");
+    
+    document.querySelector(".content").style.display = "block";
+    
+    },850);
+    });
+    </script>    
+
+        <header>
+          <div class="page-header" >
+            <div class="title">
+                <p> <b>Authentic Food Receipe Website </b></p>
+            </div>
+            <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="socialtop">
+            <div id="navigation-bar" class="nav-bar">
+                <a href="{{ url_for('home') }}"><b> Home </b></a>
+                <div class="dropdown">
+                    <a href="{{ url_for('cuisines') }}" class="dropbtn"><b> Cuisines </b> <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                      <a href="{{ url_for('indiancuisines') }}">Indian</a>
+                      <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+                      <a href="{{ url_for('italiancuisines') }}">Italian</a>
+                      <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+                      <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+                      <a href="{{ url_for('thaicuisines') }}">Thai</a>
+                      <a href="{{ url_for('greekcuisines') }}">Greek</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <a href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                        <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                        <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                        <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+                    </div>
+                  </div>
+                <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+                <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+                <a class="active" href="{{ url_for('search') }}"><b> Search </b></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+            </div>         
+            </div>
+        </div>    
+        </header>  
+<body>
+<div class="loader">
+  <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+ </div>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search recipes based on food item name or cuisine name (for ex - Indian, Italian, Chicken Tikka Masala etc.,.)...">
+    <button type="button" id="search-button">Search</button>
+  </div>
+  
+  <div class="recipes-container">
+    <div class="recipe-card">
+        <a href="{{ url_for('ChickenTikkaMasalaIndian') }}"> 
+      <img src="{{ url_for('static', filename='Images/special-chicken-tikka-masala-wide.jpg') }}" alt="Indian Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Indian</div>
+      <div class="recipe-name">Food: Chicken Tikka Masala</div>
+      <div class="recipe-ingredients">Ingredients: 1 pound boneless chicken breast, cut into bite-sized pieces, 1/2 cup plain yogurt, 1 tablespoon lemon juice, 1 teaspoon ground cumin, 1 teaspoon paprika</div>
+      <div class="recipe-instructions">Instructions: Combine chicken with yogurt and spices, sauté onions and tomatoes until soft, add chicken and cook until done, then finish with cream for a simple and delicious Chicken Tikka Masala.</div>  
+    </div>
+    
+    <div class="recipe-card">
+    <a href="{{ url_for('KungPaoChickenChinese') }}"> 
+      <img src="{{ url_for('static', filename='Images/KungPao Chicken.jpg') }}" alt="Chinese Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Chinese</div>
+      <div class="recipe-name">Food: KungPao Chicken</div>
+      <div class="recipe-ingredients">Ingredients:  2 boneless, skinless chicken breasts, cut into small pieces, 1/2 cup roasted peanuts,4-5 dried red chili peppers, 2 cloves garlic, minced,1 teaspoon grated ginger</div>
+      <div class="recipe-instructions">Instructions: Coat chicken with cornstarch and salt, sauté with bell pepper and peanuts, then add a flavorful mixture of soy sauce, rice vinegar, hoisin sauce, sesame oil, and chili flakes.</div>  
+    </div>
+    
+    <div class="recipe-card">
+        <a href="{{ url_for('SpaghettiCarbonaraItalian') }}"> 
+      <img src="{{ url_for('static', filename='Images/Spaghetti Carbonara.jpg') }}" alt="Italian Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Italian</div>
+      <div class="recipe-name">Food: Spaghetti Carbonara</div>
+      <div class="recipe-ingredients">Ingredients: 1 pound (450g) spaghetti, 6 ounces (170g) guanciale (cured pork jowl), pancetta (Italian bacon), 4 large egg yolks, 1 cup (100g) freshly grated Pecorino Romano cheese</div>
+      <div class="recipe-instructions">Instructions: Cook spaghetti according to package instructions, sauté diced bacon and garlic until crispy, then toss with beaten eggs and grated parmesan.</div>  
+    </div>
+
+    <div class="recipe-card">
+        <a href="{{ url_for('TeriyakiSalmonJapanese') }}"> 
+      <img src="{{ url_for('static', filename='Images/Teriyaki Salmon.jpg') }}" alt="Japanese Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Japanese</div>
+      <div class="recipe-name">Food: Teriyaki Salmon</div>
+      <div class="recipe-ingredients">Ingredients: 4 salmon fillets (about 6 ounces each), 2 tablespoons soy sauce, 2 tablespoons mirin, 2 tablespoons sake, 2 tablespoons brown sugar, 1 tablespoon vegetable oil</div>
+      <div class="recipe-instructions">Instructions: Whisk together soy sauce, brown sugar, honey, garlic, and ginger for the teriyaki sauce, then sear salmon fillets in a hot skillet, and broiling until caramelized, and serve.</div>  
+    </div>
+
+      <div class="recipe-card">
+        <a href="{{ url_for('EnchiladasVerdesMexican') }}"> 
+      <img src="{{ url_for('static', filename='Images/enchiladas-verdes.jpeg') }}" alt="Mexican Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Mexican</div>
+      <div class="recipe-name">Food: Enchiladas Verdes</div>
+      <div class="recipe-ingredients">Ingredients: 12 corn tortillas, 1 pound (450g) boneless, skinless chicken breasts, 2 cups (480ml) chicken broth, 1 pound (450g) tomatillos, husked and rinsed,1 small white onion</div>
+      <div class="recipe-instructions">Instructions: Mix shredded chicken with salsa verde and cilantro, roll tightly in corn tortillas, sprinkle with Monterey Jack cheese and bake until melted, then serve with sour cream.</div>  
+    </div>
+
+    <div class="recipe-card">
+        <a href="#"> 
+      <img src="{{ url_for('static', filename='Images/baingan-bharta-IndianReceipe.jpg') }}" alt="Indian Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Indian</div>
+      <div class="recipe-name">Food: Baingan Bharta</div>
+      <div class="recipe-ingredients">Ingredients: 1 large eggplant, 1 large onion chopped, 2 cloves garlic minced, 1-inch piece ginger grated, 2 tomatoes, 2 green chilies, 1 teaspoon cumin seeds, 1 teaspoon coriander powder</div>
+      <div class="recipe-instructions">Instructions: Roast an eggplant, mash the flesh and cook with onion, garlic, ginger, tomatoes, and spices to make Baingan Bharta, a flavorful and authentic Indian vegetarian dish .</div>  
+    </div>
+    
+    <div class="recipe-card">
+        <a href="#"> 
+      <img src="{{ url_for('static', filename='Images/Mapo Tofu_Chinese_veg.jpg') }}" alt="Indian Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Chinese</div>
+      <div class="recipe-name">Food: Mapo Tofu</div>
+      <div class="recipe-ingredients">Ingredients: 1 block firm tofu, 1 tablespoon Sichuan peppercorns, 3 tablespoons vegetable oil, 2 cloves garlic, 1-inch piece ginger, 2 green onions, 1 tablespoon spicy bean paste</div>
+      <div class="recipe-instructions">Instructions: Stir-fry garlic, ginger, green onions, spicy bean paste in oil, add cubed tofu and cook until heated through, and finally thicken the sauce with cornstarch.</div>  
+    </div>
+
+    <div class="recipe-card">
+        <a href="#"> 
+      <img src="{{ url_for('static', filename='Images/tempura_japanese.jpg') }}" alt="Indian Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+      </a>
+      <div class="recipe-cuisine">Cuisine: Japanese</div>
+      <div class="recipe-name">Food: Vegetable Tempura</div>
+      <div class="recipe-ingredients">Ingredients: Assorted vegetables (such as sweet potato, onion, eggplant, bell pepper, carrot, and broccoli),1 cup all-purpose flour, 1/2 cup cornstarch,1 teaspoon baking powder</div>
+      <div class="recipe-instructions">Instructions: Whisk flour, salt, egg, and ice-cold water together to make a batter, then dip bite-sized vegetables into the batter and deep-fry until golden brown and crispy.</div>  
+    </div>
+
+    <div class="recipe-card">
+      <a href="{{ url_for('GulabJamunIndianDessert') }}"> 
+    <img src="{{ url_for('static', filename='Images/gulab-jamun.jpg') }}" alt="Indian desert" style="border: 1px solid #ccc;" width="300px" height="200px">
+    </a>
+    <div class="recipe-cuisine">Cuisine: Indian</div>
+    <div class="recipe-name">Food: Gulab Jamun</div>
+    <div class="recipe-ingredients">Ingredients: Milk powder, All-purpose flour, Baking powder, Ghee, Butter Milk and Sugar Water, Cardamom powder and Rosewater</div>
+    <div class="recipe-instructions">Instructions: Mix together milk powder and flour, add in ghee and enough milk to form a soft dough. Divide the dough into small balls and deep fry until golden brown, then soak in a sugar syrup for a few hours before serving.</div>  
+  </div>
+
+  <div class="recipe-card">
+    <a href="{{ url_for('ChoclateItalianDessert') }}"> 
+  <img src="{{ url_for('static', filename='Images/italian-choco-dessert.jpg') }}" alt="Indian Cuisine" style="border: 1px solid #ccc;" width="300px" height="200px">
+  </a>
+  <div class="recipe-cuisine">Cuisine: Italian</div>
+  <div class="recipe-name">Food: Choclate-and-Pistachio Biscotti</div>
+  <div class="recipe-ingredients">Ingredients: 2 cups all-purpose flour, 1/2 cup unsweetened cocoa powder, 1 1/2 teaspoons baking powder, 1 cup granulated sugar, 1 teaspoon vanilla extract, Eggs, dark chocolate chips</div>
+  <div class="recipe-instructions">Instructions: Mix ingredients to form a dough with chopped pistachios and chocolate chips, Bake and slice into biscotti, then bake again until crisp.</div>  
+</div>
+
+<div class="recipe-card">
+<a href="{{ url_for('KahoNiaowThaiDessert') }}"> 
+<img src="{{ url_for('static', filename='Images/khao-niaow-ma-muang-mango.jpg') }}" alt="Thai Dessert" style="border: 1px solid #ccc;" width="300px" height="200px">
+</a>
+<div class="recipe-cuisine">Cuisine: Thai</div>
+<div class="recipe-name">Food: Khao-Niaow-Ma-Muang-Mango</div>
+<div class="recipe-ingredients">Ingredients: 1 1/2 cups glutinous rice, 1 1/2 cups water, 1/4 cup granulated sugar, 1/4 teaspoon salt, 2 ripe mangoes, peeled and sliced, Sesame seeds and/or mint leaves for garnish</div>
+<div class="recipe-instructions">Instructions: Soak sticky rice for at least 4 hours, then steam until cooked. Heat coconut milk, sugar, and salt, then pour over the cooked rice and serve with sliced mango.</div>  
+</div>
+
+  </div>
+  <script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+  
+</body>
+<footer>
+  <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+  <p>Contact: info@foodadventureworldwidewebsite.com</p>
+</footer>
+</html>
