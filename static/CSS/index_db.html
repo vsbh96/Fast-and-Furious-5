@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<header>
+    <div class="page-header" >
+        <div class="title">
+            <p> <b>Authentic Food Receipe Website </b></p>
+        </div>
+        <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="socialtop">
+        <div id="navigation-bar" class="nav-bar">
+          {% if 'username' in session %}
+          <h3><b>Welcome, {{ username }}</b></h3>
+          {% endif %}
+            <div class="dropdown">
+                <a href="{{ url_for('cuisines_loggedin') }}" class="dropbtn"><b> Home </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                  <a href="{{ url_for('indiancuisines') }}">Indian</a>
+                  <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+                  <a href="{{ url_for('italiancuisines') }}">Italian</a>
+                  <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+                  <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+                  <a href="{{ url_for('thaicuisines') }}">Thai</a>
+                  <a href="{{ url_for('greekcuisines') }}">Greek</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('indiandesserts') }}">Indian</a>
+                    <a href="{{ url_for('italiandesserts') }}">Italian</a>
+                    <a href="{{ url_for('thaidesserts') }}">Thai</a>
+                    <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+                </div>
+              </div>
+            <a href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+            <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+            <a href="{{ url_for('search') }}"><b> Search </b></a>
+            <a class="active" href="{{ url_for('index') }}"><b> Upload Recipe </b></a>
+            {% if 'username' in session %}
+            <a href="{{ url_for('logout') }}"><b>Logout</b></a>
+            {% endif %}
+        </div>         
+        </div>
+    </div>
+</header>
+<body>
+    <div class="container3">
+        <h1>Recipe Website</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <a href="{{ url_for('add_recipe') }}"><h4>Add Recipe</h4></a>
+        <hr>
+        <div class="row">
+            {% for recipe in recipes %}
+            <div class="col-4">
+                <div class="recipe-card">
+                    <h3>Title of the recipe: {{ recipe['id'] }} - {{ recipe['title'] }}</h3>
+                    <p><strong>Cuisine Type:</strong> {{ recipe['cuisine'] }}</p>
+                    <p><strong>Ingredients:</strong> {{ recipe['ingredients'] }}</p>
+                    <p><strong>Instructions:</strong> {{ recipe['instructions'] }}</p>
+                    <p><strong>Cooking Time:</strong> {{ recipe['cookingtime'] }}</p>
+                    <form action="{{ url_for('delete_recipe', recipe_id=recipe['id']) }}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <form action="{{ url_for('edit_recipe', recipe_id=recipe['id']) }}" method="GET">
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <p>Total Recipes: {{ total_recipes }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,727 @@
+/*For loading logo on every page while tranisitioning from one page to another*/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  background: BLACK;
+}
+
+.loader.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader img {
+  width: 100px;
+  height: 100px;
+}
+
+/*Navbar menu using Hamburger options when reduced the size to fit mobile and tablets.*/
+:root {
+  --bgcolor: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-header {
+  background-color: var(--bgcolor);
+  /* width: 100%; */
+  /* height: 5%; */
+  /* overflow: hidden; */
+  padding: 0rem;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  color: white;
+  align-self: center;
+  /* font-size: 1.2rem; */
+  margin-left: 1.2rem;
+}
+
+.nav-bar,.nav-bar1 {
+  /* background-color: #ffffff; */
+  /* border: solid red; */
+  padding: 0.3rem;
+  text-decoration: none;
+
+}
+
+.nav-bar a,.nav-bar1 a   {
+  color: white;
+  /* margin-right: 2rem; */
+  padding: 1.3rem;
+  text-decoration: none;
+  font-size: 1rem;
+
+}
+
+.nav-bar a:hover, .nav-bar1 a:hover {
+  background-color: #5052db;
+}
+
+.nav-bar a.active, .nav-bar1 a.active {
+  background-color: #f64c72;
+}
+
+/*hamburger menu icon*/
+.menu-icon {
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+
+
+/*Making nav bar responsive*/
+
+@media screen and (max-width: 850px) {
+  .nav-bar {
+      /* visibility: hidden; */
+      
+      /* flex-direction: column; */
+      display: none;
+      position: absolute;
+      top: 3.7rem;
+      left: 0;
+      width: 100%;
+      background-color: var(--bgcolor);
+      text-align: center;      
+
+  }
+  .nav-bar1 {
+    /* visibility: hidden; */
+    
+    /* flex-direction: column; */
+    display: none;
+    position: relative;
+    top: 3.7rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--bgcolor);
+    text-align: center;      
+
+}
+
+
+  .nav-bar.responsive, .nav-bar1.responsive {
+      display: block;
+  }
+  
+
+  .nav-bar a, .nav-bar1 a {
+      /* visibility: hidden; */
+      /* display: none;  */
+      display: block;
+
+  }
+
+  .menu-icon {
+      display: block;
+      z-index: 9999;
+      /* position: absolute;
+      top:0;
+      right: 0; */
+  }
+}
+
+.socialtop {
+  float: right;
+  margin-right: 5%;
+  padding: 0rem;
+}
+
+/*For search bar in Search page*/
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#search-input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  width: 60%;
+}
+
+#search-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+/*Included a receipe holder below along with effects such as hover, color etc.,.*/
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.recipe-card {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 300px;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card .recipe-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.recipe-card .recipe-cuisine {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+
+.recipe-card .recipe-ingredients {
+  margin: 10px;
+}
+
+.recipe-card .recipe-instructions {
+  margin: 10px;
+}
+/*Nav bar dropdown which we used in Cuisines and Desserts part of our navbar*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: black;
+  vertical-align: top;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 5rem;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 5px outset white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.fa-caret-down {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/*providing background color and styling to the elements in the body tag*/
+ body{
+    /* background: linear-gradient(45deg, #e6c176 60%,#f5deb3 60%); */
+    background: rgba(244,103,110,1);
+    background: -moz-linear-gradient(left, rgba(244,103,110,1) 0%, rgba(245,141,97,1) 50%, rgba(244,103,110,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(244,103,110,1)), color-stop(50%, rgba(245,141,97,1)), color-stop(100%, rgba(244,103,110,1)));
+    background: -webkit-linear-gradient(left, rgba(244,103,110,1) 0%, rgba(245,141,97,1) 50%, rgba(244,103,110,1) 100%);
+    background: -o-linear-gradient(left, rgba(244,103,110,1) 0%, rgba(245,141,97,1) 50%, rgba(244,103,110,1) 100%);
+     background: -ms-linear-gradient(left, rgba(244,103,110,1) 0%, rgba(245,141,97,1) 50%, rgba(244,103,110,1) 100%);
+     background: linear-gradient(to right, rgba(244,103,110,1) 0%, rgba(245,141,97,1) 50%, rgba(244,103,110,1) 100%);
+  }
+  
+ body h2{
+      background-color: black;
+      color: white;
+      text-align: center;   
+      border-radius: 10px 100px / 120px;
+      border: 5px outset white;
+      font-size: 24px;
+  }
+  body h3{
+  color: black;
+  text-align: center;
+  background-color: white;   
+  border-radius: 10px;
+  border: 5px outset #333;
+  font-size: 18px;
+  }
+
+/*For easier element adjust sizing, we used box sizing*/
+* {
+    box-sizing: border-box;
+  }
+/*Making it compatible across multiple devices*/
+  @media (max-width: 768px) {
+.navbar-container {
+  flex-direction: column;
+  justify-content: center;
+}
+.navbar-item {
+  margin-bottom: 10px;
+}
+}
+
+/*Created a separate block for navigation pane and adding styling elements to it */
+  .navbar-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+background-color: #333;
+padding: 0px 20px;
+}
+.navbar-container a{
+float: left;
+display: inline-flexbox;
+color: #f2f2f2;
+text-align: center;
+text-decoration: none;
+width: 10%; /* Setting width to 10% to give more width */
+box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.navbar-container a:hover {
+background: #ccc;
+}
+
+.navbar-item a:hover {
+background: #ccc;
+}
+
+.navbar-item :hover{
+background-color: #ccc;
+}
+
+/*Below CSS code is to get facebook and twitter icons in the navigation pane*/
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Added a hover effect*/
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Setting a specific color for each brand */
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+/* Here we used container class to define a block-level element that contains other elements within it*/
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+/*To create more structural layout here we created col1 inside div class container */
+  .col1 {
+    margin:10px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;        
+    }
+  
+  /*Designing the signin form by adding color and other elements*/
+#signin{
+  color: aliceblue;
+  width: fit-content;
+  text-align: center;
+  padding: 50px;
+  padding-top: 10px;
+  background-color: black;   
+  border-radius: 10px 100px / 120px;
+  border: 5px outset white;
+  font-size: 20px;
+}
+#signin p{
+padding-top: 10px;
+}
+.signin h2{
+  font-size: 20px;
+}
+#signin input[type="text"],
+#signin input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#signin h3{
+  padding-bottom: 0px;
+}
+#signin input[type="text"]{
+  padding: auto;
+  align-items: center;
+}
+  
+#signin h2 {
+  font-size: 2rem;
+}
+  
+#signin input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+/*Effect/shadow when hovered on submit button*/
+#signin input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/*making borders and shadow to the images created on landing page*/ 
+.card{
+  width: 300px;
+  box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
+  transition: 0.9s;
+  border-radius: 20px; /* rounded corners */
+  height: 27rem;
+  animation: bounce 3s;
+  animation: scale 3s ease-in-out;
+}
+/*Adding hover effect to the cards displayed on the landing page*/
+.card:hover {
+  box-shadow: 20px 16px 40px 20px rgba(0,0,0,0.2);
+  -ms-transform: scale(1.1,1.1); /* IE 9 */
+
+            -webkit-transform: scale(1.1,1.1); /* Safari */
+
+            transform: scale(1.1,1.1);
+
+            -webkit-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+
+        -moz-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+
+        box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+
+            z-index:9999;
+
+            border-right:1px solid transparent;
+
+            border-bottom:1px solid transparent;
+
+            cursor:pointer;
+
+            background-color:#fff;
+}
+
+@keyframes scale {
+
+  0% {
+  
+   transform: scale(0.5);
+  
+   }
+  
+  100% {
+  
+  transform: scale(1);
+  
+}
+  
+  }
+  @keyframes bounce {
+
+    0% { transform: translateY(10); }
+    
+   25% { transform: translateY(-20px); }
+    
+    50% { transform: translateY(20); }
+    
+    75% { transform: translateY(-10px); }
+    
+    100% { transform: translateY(0); }
+    
+    }
+
+/*Making space between an element's content and its border in the text under the image cards in landing page */
+.imgtext {
+  padding: 10px 5px;
+  }
+
+  /*Adding styling elements such as spacing,border,hover on the fields present in the registration page. */
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.register form {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.register h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.register input[type="email"],.register input[type="text"],
+.register input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.register input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.register input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/*Adding styling elements to subscribe form such as spacing,border,hover on the fields present in the landing page. */
+#subscribe{
+  color: aliceblue;
+  width: fit-content;
+  text-align: center;
+  padding: 50px;
+  padding-top: 10px;
+  background-color: black;   
+  border-radius: 10px 100px / 120px;
+  border: 5px outset white
+}
+#subscribe p{
+  padding-top: 10px;
+  color: white;
+  background-color: black;
+  text-decoration: wavy;
+  border:white;
+  border-width:2px;
+  border-style:solid;
+  font-style: italic;
+  font-weight: bolder;
+  font-family: 'times new roman';
+  font-size: 20px;
+  border-radius: 10% 30% 50% 70%;
+  border-radius: 10px 100px / 120px;
+  border-radius: 30px; 
+  border: 2px outset white
+}
+#subscribe input[type="text"],
+#subscribe input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#subscribe h3{
+  padding-bottom: 0px;
+}
+     
+#subscribe input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#subscribe input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+ 
+  /*Adding responsiveness to the images used in our receipe websites */
+  .responsive{
+        width:100%;
+        height: auto;
+      }
+
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+  }
+/*We used col2,cont div tags in all of our receipe pages to maintain consistency across all the pages*/
+  .col2 {
+    margin:1rem;
+    padding: 1rem;
+    width: 100rem;
+    text-align: center;        
+    }
+  
+  
+  .cont{
+    text-align: left;
+  }
+  
+  .cont h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .cont h3 {
+    font-size: 20px;
+  }
+  
+  .cont p {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  .cont ol,ul{
+    font-size: 20px;
+  }
+  .cont li{
+    margin-bottom: 10px;
+  }
+
+ 
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+/*for styling the footer in every page*/
+footer{
+background-color: #f5f5f5;
+color: #666;
+padding: 20px;
+text-align: center;
+position: relative;
+bottom: 0;
+width: 100%;
+
+}
+/*Used these classes div tages(details, member) in About Us page for better layout and styling purposes*/
+.details p{
+  color: black;
+  text-align: left;
+  background-color: white;   
+  border-radius: 10px;
+  border: 5px outset #333;
+  }
+
+.member {
+      margin: 20px;
+      padding: 20px;
+      width: 300px;
+      background-color: wheat;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .member h3 {
+      margin-top: 0;
+    }
+
+    .member p,.member ul {
+      margin-bottom: 0;
+      text-align: left;
+    }  
+/*Used col3 class in contact us for better viewing and styling*/
+    .col3 {
+      margin:10px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;        
+      }
+
+      .col3 input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .col3 form {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+      
+      .col3 h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .col3 input[type="email"],.col3 input[type="text"],
+      .col3 textarea[id="message"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      

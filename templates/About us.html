@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/CSS/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='/Images/Recipe_Cooking.png') }}" type="image/png">
+    <title>About Us</title>
+</head>
+<script>
+  /*LOADING LOGO */
+window.addEventListener("load", function () {
+
+const loader = document.querySelector(".loader");
+
+setTimeout(() => {
+
+loader.classList.add("hide");
+
+document.querySelector(".content").style.display = "block";
+
+},850);
+});
+</script>
+
+<body>
+  <div class="loader">
+    <img src="{{ url_for('static', filename='Images/giphy.gif') }}" alt="loading" />    
+ </div>
+ <div class="page-header" >
+  <div class="title">
+      <p> <b>Authentic Food Receipe Website </b></p>
+  </div>
+  <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+      <i class="fa fa-bars"></i>
+  </a>
+  <div class="socialtop">
+  <div id="navigation-bar" class="nav-bar">
+      <a href="{{ url_for('home') }}"><b> Home </b></a>
+      <div class="dropdown">
+          <a href="{{ url_for('cuisines') }}" class="dropbtn"><b> Cuisines </b> <i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="{{ url_for('indiancuisines') }}">Indian</a>
+            <a href="{{ url_for('mexicancuisines') }}">Mexican</a>
+            <a href="{{ url_for('italiancuisines') }}">Italian</a>
+            <a href="{{ url_for('chinesecuisines') }}">Chinese</a>
+            <a href="{{ url_for('japanesecuisines') }}">Japanese</a>
+            <a href="{{ url_for('thaicuisines') }}">Thai</a>
+            <a href="{{ url_for('greekcuisines') }}">Greek</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="{{ url_for('dessertsmain') }}" class="dropbtn"><b> Desserts </b> <i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+              <a href="{{ url_for('indiandesserts') }}">Indian</a>
+              <a href="{{ url_for('italiandesserts') }}">Italian</a>
+              <a href="{{ url_for('thaidesserts') }}">Thai</a>
+              <a href="{{ url_for('mexicandesserts') }}">Mexican</a>
+          </div>
+        </div>
+      <a class="active" href="{{ url_for('aboutus') }}"><b> About Us </b></a>
+      <a href="{{ url_for('contact') }}"><b> Contact Us </b></a>
+      <a href="{{ url_for('search') }}"><b> Search </b></a>
+      <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+  </div>         
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='Javascript/index.js') }}"></script>
+
+   <div class="details">
+    <h2> About Us Page</h2>
+    <p><b>Welcome to our recipe-sharing platform! Here, you can browse a variety of cuisines from around the world and even post your own recipes for others to enjoy. <br><br>Our user-friendly website is designed using HTML, CSS, and Flask to ensure a seamless experience for all users.Whether you're a seasoned chef or just starting out in the kitchen, you'll find something to suit your tastes on our website. <br><br>You don't need to be registered to view our collection of delicious recipes, and our categorization system ensures that you can easily find the perfect dish for any occasion.
+      
+      <br><br>We take the quality of our recipes seriously, and our team carefully reviews each submission for relevancy and accuracy before categorizing them into the appropriate cuisine. This ensures that our users have access to only the most delicious and authentic recipes from around the world.
+      
+      <br><br>So what are you waiting for? Join our community of food lovers and start sharing your favorite recipes today!</b></p>
+    </div>
+    <h2> Details of members and their contributions</h2>
+  <div class="container">        
+    <div class="member">
+      <img src="{{ url_for('static', filename='Images/Sai Bharadwaja Vellanki.JPG') }}" alt="Member 1">
+      <h3>Sai Bharadwaja Vellanki</h3>
+      <h3>My Experience and Responsibilities</h3>
+      <h4>Experience</h4>
+      <p>Performed IT & Business Process risk management audits for about 4 years in Deloitte. Interacted with the CTOs, Chief Compliance Officer(s) & Process Owners of the globally operating firms and executed projects to monitor and mitigate Risk which is directly or indirectly impacted the financials of an entity.</p>
+      <h4>Contributions</h4> 
+
+      <p><b>Database:</b> I have created two database schemas to store information about the users(users.db) and recipe details (recipe.db), defined models, and updated our application code to interact with the database.</p>
+        <p><b>Add/Delete/Edit Recipe:</b>I have written Python code to access certain features of the website, such as adding, editing, or deleting recipes. </p>
+        <p><b>Implemented logout functionality:</b>I have allowed users to log out of the website when they are finished using it. This will end their session.</p>
+        <p><b>Verify user credentials: </b> When a user enters their login information, I made sure to verify their credentials against the information stored in our database. If there is a match, then we allow the user to access the website's features. </p>
+    </div>
+    <div class="member">
+      <img src="{{ url_for('static', filename='Images/Praharsha Vadlapatla.jpeg') }}" alt="Member 2">
+      <h3>Praharsha Vadlapatla</h3>
+      <h3>My Experience and Responsibilities</h3>
+      <h4>Experience</h4>
+      <p>I have four years of experience as Database Administrator and have gained a solid foundation in database management, including designing, implementing, maintaining, and troubleshooting databases. I have knowledge of database concepts and technologies, such as SQL, data modeling, database security, backup and recovery, performance tuning, and database optimization.</p>
+      <br><h4>Contributions</h4>
+      <p>I have integrated Flask into our existing HTML/CSS/JavaScript code of pages such as individual cuisine pages and recipe pages. This involves creating a Flask application object, defining routes, and rendering templates. Also tested the flask application to make sure it is working properly across all the pages.</p><br><br><br><br><br><br><br><br>
+    </div>
+    <div class="member">
+      <img src="{{ url_for('static', filename='Images/Vijay Sreekar.jpeg') }}" alt="Member 3">
+      <h3>Vijaya Satya Srikar Vanga</h3>
+      <h3>My Experience and Responsibilities</h3>
+      <h4>Experience</h4>
+        <p>As a skilled Data Analyst with expertise in Machine Learning, I specialize in the domains of Natural Language Processing (NLP), Automatic Speech Recognition (ASR) and Text-to-Speech (TTS). My contributions to Alexa's quality of responses are notable, employing Python scripting and Sage Maker. Also designed cutting-edge visualizations and dashboards utilizing SQL Server Reporting Services, Tableau, and PowerBI.</p>
+        <br><h4>Contributions</h4>
+      <p>My responsibility was to integrate the "Desserts" pages within flask application and made it compatible with the flask . This involves creating a Flask application object, defining routes, and rendering templates. I have also created the presentation for my entire project that includes content gathering from starting of the project(HTML/CSS) till the latest flask application development. </p><br><br><br><br><br><br>
+
+    </div>
+    <div class="member">
+        <img src="{{ url_for('static', filename='Images/Sri Ram Sripada.jpeg') }}" alt="Member 4">
+        <h3>Sri Ram Sripada</h3>
+      <h3>My Experience and Responsibilities</h3>
+      <h4>Experience</h4>
+      <p>I possess two years of experience in the field of Software Engineering, with a focus on software development, testing, and deployment. My professional experience primarily revolves around developing Python scripts that facilitate the capturing of data from diverse network devices. I am proficient in utilizing Linux operating systems and successfully deploying applications within enterprise environments. </p>  
+    <h4>Contributions</h4>
+    <p>I was responsible for designing and executing the project plan and I have also integrated Flask into our existing HTML/CSS/JavaScript code of pages such as some of desserts pages, cuisines pages, and about us page . This involves creating a Flask application object, defining routes, and rendering templates.</p><br><br><br><br><br><br><br>
+    </div>
+      <div class="member">
+        <img src="{{ url_for('static', filename='Images/Prashanth Reddy.jpeg') }}" alt="Member 5">
+        <h3>Prashanth Reddy Thudi</h3>
+        <h3>My Experience and Responsibilities</h3>
+        <h4>Experience</h4>
+        <p>As a senior business analyst, my role in the company wass to analyze complex business processes, identify areas of improvement, and provide strategic insights to senior management. My role is critical to ensuring the success of the company's business strategy, and I am committed to delivering results that positively impact the bottom line.</p>
+        <br><h4>Contributions</h4>
+        <p> I have reorganized the file structure as flask has its own file structure and conventions, so I have reorganized my existing files to fit the Flask structure.I am responsible for planning and integrating some of the webpages such as Contact Us and italian desserts into flask application.</p><br><br><br><br><br><br><br><br><br>
+      </div>
+  </div>
+  <footer>
+    <p>&copy; 2023 FoodAdventuresWorldwideWebsite. All rights reserved.</p>
+    <p>Contact: info@foodadventureworldwidewebsite.com</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .slider {
+      width: 50%;
+      margin: 50px auto;
+      margin-bottom:-20rem ;
+      margin-right: 18rem;
+  }
+
+  .slick-slide {
+    margin: 0px 20px;
+  }
+
+  .slick-slide img {
+    width: 80%;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+       }
+  .slick-next:before {
+    color: black;
+    margin-left: -14rem;
+  }
+
+
+  .slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .2;
+  }
+  
+  .slick-active {
+    opacity: .5;
+  }
+
+  .slick-current {
+    opacity: 1;
+  }
+
+  .slick-dots {
+margin-left: 0rem; /* adjust the bottom placement as needed */
+margin-right: 40rem;
+}
+@media screen and (max-width: 850px) {
+
+.slider {
+width: 80%;
+margin: 3rem auto;
+margin-left: 2rem;
+}
+.slick-slide {
+margin: 0px 20px;
+}
+
+.slick-slide img {
+width: 100%;
+align-self: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: black;
+ }
+.slick-next:before {
+color: black;
+margin-left: -1rem;
+}
+
+
+.slick-slide {
+transition: all ease-in-out .3s;
+opacity: .2;
+}
+
+.slick-active {
+opacity: .5;
+}
+
+.slick-current {
+opacity: 1;
+}
+
+.slick-dots {
+margin-left: 2rem; /* adjust the bottom placement as needed */
+}
+}

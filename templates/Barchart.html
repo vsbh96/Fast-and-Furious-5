@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+ body {
+    height: 50rem;
+    width: 50rem;
+ }
+
+</style>
+<body>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  // Your JavaScript code here
+  const data = {
+      labels: ['Italian', 'Thai', 'Japanese', 'Indian', 'Chinese', 'Mexican','Greek'],
+      datasets: [ {
+      label: 'Chicken Tikka Masala',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0,0,0,30,0,0,0],
+    },
+    {
+      label: 'Paneer Butter Masala',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0,0,0,25,0,0,0]
+    },
+    {
+      label: 'Mexican-Enchiladas',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 0, 30, 0]
+    },
+    {
+      label: 'Burritos',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 0, 20, 0]
+    },
+    {
+      label: 'Pad Thai Authentic',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 15, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Pad See Ew',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 20, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Spaghetti Carbonara',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [20, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Lasagne',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [25, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Kung-Pao-Chicken',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 20, 0, 0]
+    },
+    {
+      label: 'Chuan',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 40, 0, 0]
+    },
+    {
+      label: 'Japanese Teriyaki Salmon',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 0, 10, 0, 0, 0, 0]
+    },
+    {
+      label: 'Tempura',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1,
+      data: [0, 0, 20, 0, 0, 0, 0]
+    },
+    {
+      label: 'Moussaka',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      data: [0, 0, 0, 0, 0, 0, 20]
+    }
+
+    ]
+    };
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true,
+          },
+          y: {
+            stacked: true
+          }
+        }
+      },
+    };
+
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+});
+     </script>
+</body>
+</html>

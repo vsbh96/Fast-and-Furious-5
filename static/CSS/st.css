@@ -1,0 +1,71 @@
+button[type="submit"] {
+    display: block;
+    margin: 20px 0;
+    padding:10px; 
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flashes li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.flashes .error {
+    background-color: #FFCCCC;
+    color: #CC0000;
+}
+
+.flashes .success {
+    background-color: #C9E2B3;
+    color: #38761D;
+}
+
+.recipe-card1 p{
+    color: black;
+    display: block;
+    font-size: 1.2rem;
+
+}
+
+.col-4 {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.row1::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.recipe-card1 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.recipe-card1 h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
