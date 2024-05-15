@@ -5,15 +5,3 @@ recipes from various cuisines and provides an easy-to-use categorization system 
 This website takes the quality of the information provided very seriously, and a team of experts carefully reviews each submission for
 relevancy and accuracy before categorizing them into the appropriate cuisine. This ensures that the users have access to only the most 
 authentic and delicious recipes from around the world.
-
-
-
-
-
-
-Group 2 Members- 
-1. Sai Bharadwaja Vellanki
-2. Sriram Sripada
-3. Praharsha Vadlapatla
-4. Vijaya Sreekar
-5. Prashanth Thudi
